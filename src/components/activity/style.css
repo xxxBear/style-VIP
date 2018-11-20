@@ -1,9 +1,8 @@
-.activites {
+.activities {
   width: 100%;
   height: 100%;
   background-color: #f7f7f7;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .container {
@@ -20,6 +19,7 @@
   top: 0;
   left: 0;
   border-bottom: 1px solid #ccc;
+  z-index: 999;
 }
 
 .header p {
@@ -28,74 +28,60 @@
   font-size: 1.13rem;
 }
 
-.activites {
+.activities {
   margin-top: 3.5rem;
 }
 
-.activitesItem {}
+.activitiesItem {
+  margin-top: 2rem;
+}
 
-.activites a {
+.activities a {
   display: block;
   width: 100%;
-  height: 13.31rem;
   background-color: #ffffff;
+  margin-top: 1rem;
+}
+
+.activitiesItem a>div {
   padding: 1rem;
+  position: relative;
 }
 
 
 
-
-
-
-
-
-
-.footerNav {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  display: flex;
+.activitiesItem img {
   width: 100%;
-  padding: 10px 10px 0;
-  background-color: #fff;
-  text-align: center;
-  box-sizing: border-box;
-  box-shadow: 0rem -0.25rem 0.31rem 0rem rgba(213, 213, 213, 1);
+  height: 100%;
 }
 
-.footerNav div {
-  padding-bottom: 0;
-  flex: 1;
-}
-
-.footerNav div .icon {
-  font-size: 1.46rem;
-}
-
-.footerNav div p {
+.activitiesItem .mark {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 0;
+  height: 0;
   padding: 0;
-  margin: 5px 0;
-  font-size: 0.63rem;
+  border-top: 0 solid transparent;
+  border-left: 1.5rem solid #ff4081;
+  border-bottom: 1.5rem solid transparent;
+  z-index: 2;
 }
 
-/* 回到页面顶部样式 */
-
-.goTop {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #afafaf;
-  position: fixed;
-  bottom: 6rem;
-  right: 1rem;
-  line-height: 2.5rem;
-  text-align: center;
-  border-radius: 0.3rem;
+.activities .activitiesInfo {
+  color: #ea729b;
+  padding: .5rem 1rem;
 }
 
-.goTop .icon {
-  display: inline-block;
-  height: 2.5rem;
-  color: #fff;
-  font-size: 1.8rem;
-  line-height: 2.5rem;
+.activitiesItem .activitiesInfo {
+  display: flex;
+}
+
+.activitiesInfo .activitiesTitle {
+  flex: 6;
+}
+
+.activitiesInfo .activitiesDate {
+  flex: 3;
+  text-align: right;
 }

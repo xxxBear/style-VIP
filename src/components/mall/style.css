@@ -1,0 +1,74 @@
+.mall {
+  width: 100%;
+  height: 100%;
+}
+
+.mall .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.header {
+  background-color: #fff;
+  width: 100%;
+  height: 2.81rem;
+  text-align: center;
+  line-height: 2.81rem;
+  position: fixed;
+}
+
+.header p {
+  color: #ff4081;
+  font-weight: bold;
+  font-size: 1.13rem;
+}
+
+.header input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.81rem;
+  width: 4rem;
+  border: none;
+  background-color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.header .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  text-align: right;
+  font-size: 1.5rem;
+  padding-right: .625rem;
+}
+
+.mall .footerMall {
+  width: 100%;
+  /* height: 3rem; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  background-color: #fff;
+  padding: 1rem 1rem;
+  box-sizing: border-box;
+}
+
+.footerMall .homeMall,
+.footerMall .allPro,
+.footerMall .category,
+.footerMall .vipCenter {
+  flex: 1;
+  text-align: center;
+  /* line-height: 3rem; */
+  border-left: 1px solid #ccc;
+  font-family: PingFangSC-regular;
+}
+
+.footerMall .homeMall {
+  border: none;
+}
