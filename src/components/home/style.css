@@ -1,21 +1,40 @@
 .container {
   width: 100%;
   height: 100%;
-  background-color: #fff;
   box-sizing: border-box;
+  /* padding-top: 4.6rem; */
 }
 
 .icon {
-  font-size: .9rem;
+  font-size: 0.9rem;
+}
+
+.clearfix {
+  content: '';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
 }
 
 /* 顶部样式 */
+
 .header {
   width: 100%;
   height: 2.81rem;
   display: flex;
   background-color: #fff;
   position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .header .location,
@@ -74,31 +93,92 @@
 }
 
 /* 店铺列表样式 */
+.shop {
+  margin-top: 5.5rem;
+  background-color: #f7f7f7;
+}
 .shoplist {
   width: 100%;
-  height: 18.5rem;
-  border: 1px solid red;
-  /* padding-top: 4.8rem; */
+  margin-top: .5rem;
+  background-color: #fff;
+}
+
+.shoplist .shopTitle {
+  display: flex;
+  padding: .8rem 0;
+}
+
+.shopTitle .shopName {
+  padding-left: .3rem;
+  flex: 3;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.shopTitle .shopDistance {
+  text-align: center;
+  flex: 1;
+}
+
+.shoplist .shopIMG {
+  display: flex;
+}
+
+.shoplist .shopIMG div {
+  flex: 1;
+  width: 50%;
+  height: 7.5rem;
+}
+
+.shoplist .shopInfo {
+  padding-left: .3125rem;
+}
+
+.shoplist .shopAddress {
+  margin-top: .9375rem;
+  padding-left: .4rem;
+  font-size: .75rem;
+}
+
+.shoplist .consumption {
+  display: flex;
+}
+
+.shoplist .consumption .comment {
+  flex: 2;
+  padding-left: .3125rem;
+}
+
+.shoplist .consumption .perConsump {
+  flex: 1;
+}
+
+.shoplist .shopService {
+  margin-top: 1rem;
+}
+
+.shoplist .shopService a {
+  display: block;
+  color: #FF4081;
+  text-align: center;
+}
+
+.shoplist .shopInfo,
+.shoplist .shopAddress,
+.shoplist .consumption,
+.shoplist .shopService {
+  font-size: .75rem;
+  line-height: 1.2rem;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 底部导航栏样式 */
-.footer {
+
+.footerNav {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -111,22 +191,23 @@
   box-shadow: 0rem -0.25rem 0.31rem 0rem rgba(213, 213, 213, 1);
 }
 
-.footer div {
+.footerNav div {
   padding-bottom: 0;
   flex: 1;
 }
 
-.footer div .icon {
+.footerNav div .icon {
   font-size: 1.46rem;
 }
 
-.footer div p {
+.footerNav div p {
   padding: 0;
   margin: 5px 0;
-  font-size: .63rem;
+  font-size: 0.63rem;
 }
 
 /* 回到页面顶部样式 */
+
 .goTop {
   width: 2.5rem;
   height: 2.5rem;
@@ -136,11 +217,12 @@
   right: 1rem;
   line-height: 2.5rem;
   text-align: center;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
 
 .goTop .icon {
   display: inline-block;
+  height: 2.5rem;
   color: #fff;
   font-size: 1.8rem;
   line-height: 2.5rem;
