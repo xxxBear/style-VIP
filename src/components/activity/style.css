@@ -71,6 +71,7 @@
 .activities .activitiesInfo {
   color: #ea729b;
   padding: .5rem 1rem;
+  margin-top: -1rem;
 }
 
 .activitiesItem .activitiesInfo {

@@ -1,9 +1,9 @@
 <template>
-    <div class="goTop">
-        <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-4fanhuidingbubai"></use>
-        </svg>
-    </div>
+  <div class="goTop">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-4fanhuidingbubai"></use>
+    </svg>
+  </div>
 </template>
 <script>
 export default {
@@ -15,8 +15,8 @@ export default {
 .goTop {
   width: 2.5rem;
   height: 2.5rem;
-  background-color: #afafaf;
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.45);
   bottom: 6rem;
   right: 1rem;
   line-height: 2.5rem;

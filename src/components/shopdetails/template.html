@@ -1,0 +1,108 @@
+<div class="shopDetails">
+  <!-- 店铺详情头部 -->
+  <div class="header">
+    <p>店铺名</p>
+    <input type="button" value="< 返回" />
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-gantanhao-xianxingyuankuang"></use>
+    </svg>
+  </div>
+
+  <!-- 店铺内容 -->
+  <div class="main">
+    <!-- 店铺轮播图 -->
+    <div class="carousel">
+      <mu-carousel hide-controls>
+        <!--
+          <template slot="indicator" slot-scope="{ index, active }">
+            <mu-button icon class="mu-carousel-indicator-button" :class="{'mu-carousel-indicator-button__active': active}"
+              @click="changeActive(index)">
+              <span class="rect-indicator"></span>
+            </mu-button>
+          </template>
+        -->
+        <mu-carousel-item> <img :src="carouselImg1" /> </mu-carousel-item>
+        <mu-carousel-item> <img :src="carouselImg2" /> </mu-carousel-item>
+        <mu-carousel-item> <img :src="carouselImg3" /> </mu-carousel-item>
+        <mu-carousel-item> <img :src="carouselImg4" /> </mu-carousel-item>
+      </mu-carousel>
+    </div>
+    <!-- 店铺详细信息 -->
+    <div class="shopInfo demo-container is-stripe">
+      <mu-row>
+        <mu-col span="10">
+          <div class="grid-cell"><span id="storename">La Môd 资生堂美容美发概念店·大中华店</span></div>
+        </mu-col>
+        <mu-col span="2">
+          <div class="grid-cell" id="distance"><svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-dingwei1"></use>
+            </svg>200m</div>
+        </mu-col>
+      </mu-row>
+      <mu-row>
+        <mu-col span="12">
+          <div class="grid-cell" id="storeintro"><span>全球首家资生堂美容美发概念店，国内独家使用资生堂QI系列!</span></div>
+        </mu-col>
+      </mu-row>
+      <mu-row>
+        <mu-col span="12">
+          <div class="grid-cell" id="storeaddress">
+            <svg class="icon bigger" aria-hidden="true">
+              <use xlink:href="#icon-dingwei"></use>
+            </svg>
+            上海市黄浦区马当路159号，13号线2号口直走200米
+          </div>
+        </mu-col>
+      </mu-row>
+      <mu-row>
+        <mu-col span="8" id="assessment">
+          <div class="grid-cell">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-pinglun"></use>
+            </svg>
+            点评数1266
+          </div>
+        </mu-col>
+        <mu-col span="4">
+          <div class="grid-cell">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-meiyuan8"></use>
+            </svg>
+            人均消费488
+          </div>
+        </mu-col>
+      </mu-row>
+    </div>
+
+    <!-- 电话预约功能模块 -->
+    <div class="reservation">
+      <mu-flex justify-content="center" align-items="center">
+        <mu-button full-width id="reserphone" color="primary">021-58786598 电话预约</mu-button>
+      </mu-flex>
+    </div>
+    <!-- 店铺服务 -->
+    <div class="saleServeOnline">
+      <p>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-fuwu"></use>
+        </svg>
+        在售服务
+      </p>
+
+      
+
+    </div>
+  </div>
+  <!-- 悬浮点评按钮 -->
+  <!-- <mu-container class="button-wrapper"> -->
+  <mu-button class="button-comment" color="primary">我要点评</mu-button>
+  <!-- <mu-container> -->
+
+  <!-- 店铺详情底部导航 -->
+  <div class="footer">
+    <div class="shopHome"><span>门店首页</span></div>
+    <div class="workLib"><span>作品库</span></div>
+    <div class="staff"><span>STAFF</span></div>
+    <div class="excMall"><span>专属商城</span></div>
+  </div>
+</div>
