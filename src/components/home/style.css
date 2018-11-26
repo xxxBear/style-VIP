@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  margin-bottom: 1.25rem;
 }
 
 .icon {
@@ -16,12 +17,27 @@
   height: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  background-color: #fff;
+  margin-top: .625rem;
+  padding-bottom: .625rem;
+}
+
 .fl {
   float: left;
 }
 
 .fr {
   float: right;
+}
+
+.tac {
+  text-align: center;
 }
 
 /* 顶部样式 */
@@ -92,12 +108,13 @@
 }
 
 /* 店铺列表样式 */
-.shop {
+/* .shop {
   margin-top: 5.5rem;
   background-color: #f7f7f7;
-}
+  list-style: none;
+} */
 
-.shoplist {
+/* .shoplist {
   width: 100%;
   margin-top: .5rem;
   background-color: #fff;
@@ -113,8 +130,9 @@
   flex: 3;
   font-size: 1rem;
   font-weight: bold;
-  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .shopTitle .shopDistance {
@@ -181,4 +199,107 @@
 .shoplist .shopService {
   font-size: .75rem;
   line-height: 1.2rem;
+} */
+
+/* 商户列表样式改写 */
+.store {
+  margin-top: 5.5rem;
+  background-color: #f7f7f7;
+  list-style: none;
+}
+
+.store a {
+  display: block;
+  color: #000;
+}
+
+.ssoreList {
+  width: 100%;
+  margin-top: .5rem;
+  background-color: #fff;
+}
+
+.storeList .storeTitle {
+  display: flex;
+  padding: .8rem 0;
+}
+
+.storeTitle .storeName {
+  padding-left: .3rem;
+  flex: 3;
+  font-size: 1rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.storeTitle .storeDistance {
+  text-align: center;
+  flex: 1;
+}
+
+.storeList .storeIMG {
+  display: flex;
+}
+
+.storeList .storeIMG div {
+  flex: 1;
+  width: 50%;
+  height: 7.5rem;
+}
+
+.storeList .storeIMG img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.storeList .storeIMG .rImg {
+  margin-left: .3125rem;
+}
+
+.storeList .storeInfo {
+  padding-left: .3125rem;
+}
+
+.storeList .storeAddress {
+  margin-top: .9375rem;
+  padding-left: .4rem;
+  font-size: .75rem;
+}
+
+.storeList .consumption {
+  display: flex;
+}
+
+.storeList .consumption .comment {
+  flex: 2;
+  padding-left: .3125rem;
+}
+
+.storeList .consumption .perConsump {
+  flex: 1;
+}
+
+.storeList .serviceOnsale {
+  margin-top: 1rem;
+}
+
+.storeList .serviceOnsale a {
+  display: block;
+  color: #FF4081;
+  text-align: center;
+}
+
+.storeList .storeInfo,
+.storeList .storeAddress,
+.storeList .consumption,
+.storeList .serviceOnsale {
+  font-size: .75rem;
+  line-height: 1.2rem;
+}
+
+.serviceOnsale {
+  color: #FF4081;
 }

@@ -31,17 +31,24 @@
     <div class="shopInfo demo-container is-stripe">
       <mu-row>
         <mu-col span="10">
-          <div class="grid-cell"><span id="storename">La Môd 资生堂美容美发概念店·大中华店</span></div>
+          <div class="grid-cell">
+            <span id="storename">La Môd 资生堂美容美发概念店·大中华店</span>
+          </div>
         </mu-col>
         <mu-col span="2">
-          <div class="grid-cell" id="distance"><svg class="icon" aria-hidden="true">
+          <div class="grid-cell" id="distance">
+            <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-dingwei1"></use>
-            </svg>200m</div>
+            </svg>
+            200m
+          </div>
         </mu-col>
       </mu-row>
       <mu-row>
         <mu-col span="12">
-          <div class="grid-cell" id="storeintro"><span>全球首家资生堂美容美发概念店，国内独家使用资生堂QI系列!</span></div>
+          <div class="grid-cell" id="storeintro">
+            <span>全球首家资生堂美容美发概念店，国内独家使用资生堂QI系列!</span>
+          </div>
         </mu-col>
       </mu-row>
       <mu-row>
@@ -77,20 +84,92 @@
     <!-- 电话预约功能模块 -->
     <div class="reservation">
       <mu-flex justify-content="center" align-items="center">
-        <mu-button full-width id="reserphone" color="primary">021-58786598 电话预约</mu-button>
+        <mu-button full-width id="reserphone" color="primary"
+          >021-58786598 电话预约</mu-button
+        >
       </mu-flex>
     </div>
     <!-- 店铺服务 -->
     <div class="saleServeOnline">
-      <p>
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-fuwu"></use>
-        </svg>
-        在售服务
-      </p>
+      <!--
+        <p>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-fuwu"></use>
+          </svg>
+          在售服务
+        </p>
+        <div class="serveItem">
 
-      
+        </div>
+      -->
 
+      <mu-paper :z-depth="1" class="saleServeOnline">
+        <mu-appbar color="cyan">
+          <mu-button icon slot="left">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-fuwu"></use>
+            </svg>
+          </mu-button>
+          在售服务
+          <mu-button icon slot="right">
+            <mu-icon value="search"></mu-icon>
+          </mu-button>
+        </mu-appbar>
+        <mu-list textline="three-line">
+          <mu-sub-header>今天</mu-sub-header>
+          <mu-list-item avatar :ripple="false" button>
+            <mu-list-item-action>
+              <mu-avatar> <img src="../../assets/img/demo.jpg" /> </mu-avatar>
+            </mu-list-item-action>
+            <mu-list-item-content>
+              <mu-list-item-title>这个周末一起吃饭么?</mu-list-item-title>
+              <mu-list-item-sub-title>
+                <span style="color: rgba(0, 0, 0, .87)">Myron Liu -</span>
+                周末要来你这里出差，要不要一起吃个饭呀，实在编不下去了,哈哈哈哈哈哈
+              </mu-list-item-sub-title>
+            </mu-list-item-content>
+          </mu-list-item>
+          <mu-divider></mu-divider>
+          <mu-list-item avatar :ripple="false" button>
+            <mu-list-item-action>
+              <mu-avatar> <img src="../../assets/img/img.png" /> </mu-avatar>
+            </mu-list-item-action>
+            <mu-list-item-content>
+              <mu-list-item-title>Alex Qin</mu-list-item-title>
+              <mu-list-item-sub-title>
+                <span style="color: rgba(0, 0, 0, .87)">看电影啊</span><br />
+                我们去看电影，最近有部烂片上映，又有吐槽的了
+              </mu-list-item-sub-title>
+            </mu-list-item-content>
+          </mu-list-item>
+          <mu-divider></mu-divider>
+          <mu-list-item avatar :ripple="false" button>
+            <mu-list-item-action>
+              <mu-avatar> <img src="../../assets/img/3.jpg" /> </mu-avatar>
+            </mu-list-item-action>
+            <mu-list-item-content>
+              <mu-list-item-title>LOL</mu-list-item-title>
+              <mu-list-item-sub-title>
+                <span style="color: rgba(0, 0, 0, .87)">去打游戏啊</span><br />
+                周末一起 LOL
+              </mu-list-item-sub-title>
+            </mu-list-item-content>
+          </mu-list-item>
+          <mu-divider></mu-divider>
+          <mu-list-item avatar :ripple="false" button>
+            <mu-list-item-action>
+              <mu-avatar> <img src="../../assets/img/4.jpg" /> </mu-avatar>
+            </mu-list-item-action>
+            <mu-list-item-content>
+              <mu-list-item-title>LOL</mu-list-item-title>
+              <mu-list-item-sub-title>
+                <span style="color: rgba(0, 0, 0, .87)">哇去</span><br />
+                实在编不下去，这就是个demo
+              </mu-list-item-sub-title>
+            </mu-list-item-content>
+          </mu-list-item>
+        </mu-list>
+      </mu-paper>
     </div>
   </div>
   <!-- 悬浮点评按钮 -->
