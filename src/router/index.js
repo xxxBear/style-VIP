@@ -35,4 +35,16 @@ const router = new Router({
     component: Mall
   }]
 })
+
+// router.beforeEach((to, from, next) => {
+//   if (to.path === '/home') {
+//     return next();
+//   }
+//   const token = localStorage.getItem('token');
+//   if (token) {
+//     next();
+//   } else {
+//     next();
+//   }
+// })
 export default router

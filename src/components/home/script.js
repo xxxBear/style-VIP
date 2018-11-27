@@ -1,11 +1,16 @@
+import axios from 'axios';
 export default {
   data() {
     return {
-      storeList: []
+      storeList: [],
+      params: {
+        pageno: 1,
+        pagesize: 2
+      }
     };
   },
   created() {
-    // this.fetchStoreList();
+    this.getStoreList();
   },
   methods: {
     // 请求参数加密
@@ -50,16 +55,17 @@ export default {
       }
     },
     async getStoreList() {
-      this.$http.post('ecp.crm.store.getlist', getParams({
-          pagesize: 2,
-          pageno: 1
-        }, getlist, false))
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
+      const url = 'http://open.ecp100.com/router/ecp.crm.store.getlist';
+      const res = await this.$http.post(url, this.getParams(params, getlist, true));
+      const data = res.data;
+      console.log(data);
+      // this.$http.post('ecp.crm.store.getlist', getParams(params, getlist, false))
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   })
 
       // const ret = this.$http.post('ecp.crm.store.getlist', getParams({
       //   pageno: 1,
