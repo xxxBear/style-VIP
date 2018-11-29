@@ -1,3 +1,4 @@
+import md5 from 'js-md5';
 import axios from 'axios';
 export default {
   data() {
@@ -6,7 +7,8 @@ export default {
       params: {
         pageno: 1,
         pagesize: 2
-      }
+      },
+      functionname: 'ecp.crm.store.getlist'
     };
   },
   created() {
@@ -14,77 +16,78 @@ export default {
   },
   methods: {
     // 请求参数加密
-    getParams(params, _functionname, _async) {
-      var sign = '';
-      // 参数对象拼接字符串
-      var str = '';
-      for (k in params) {
-        var v = k + params[k];
-        str += v;
-      }
+    getParams(params, fn, async) {
+      var _secretkey = '559ab76da1fe45052055da61';
 
-      var _functionname = _functionname;
-      var _async = _async || false;
-      var _appkey = '559ab76da1fe45052055da60';
-      var _sessionkey = '559ab76da1fe45052055da62';
-      // 获取当前时间戳，精确到毫秒
-      var _timestamp = new Date().getTime();
-      // var _timestamp = new Date().valueOf();
-      var _version = '1.0';
-      var secretkey = '559ab76da1fe45052055da61';
+      var fixParams = {
+        _sessionkey: '559ab76da1fe45052055da62',
+        _appkey: '559ab76da1fe45052055da60',
+        _functionname: fn,
+        _version: '1.0',
+        _async: async,
+        _timestamp: Date.parse(new Date())
+      };
+      var newParams = Object.assign({}, fixParams, params);
 
-      sign = (md5(secretkey +
-        '_appkey' + _appkey +
-        '_async' + _async +
-        '_functionname' + _functionname +
-        '_sessionkey' + _sessionkey +
-        '_version' + _version +
-        '_timestamp' + _timestamp +
-        // 请求参数拼串
-        str +
-        secretkey)).toLocaleLowerCase();
-      return newParams = {
-        params,
-        "_appkey": '559ab76da1fe45052055da60',
-        "_sessionkey": '559ab76da1fe45052055da62',
-        "_functionname": _functionname,
-        "_version": '1.0',
-        "_async": _async,
-        "_timestamp": _timestamp,
-        "sign": sign
-      }
+      function sort_ASCII(obj) {
+        var arr = new Array();
+        var num = 0;
+        for (var i in obj) {
+          arr[num] = i;
+          num++;
+        }
+        var sortArr = arr.sort();
+        var sortObj = {};
+        for (var i in sortArr) {
+          sortObj[sortArr[i]] = obj[sortArr[i]];
+        }
+        return sortObj;
+      };
+
+      var beforeSign = sort_ASCII(newParams);
+
+      var str;
+      var _sign;
+      var sign = (md5(_secretkey + (JSON.stringify(beforeSign).replace(/\"/g, '').replace(/\{/g, '').replace(/\}/g, '').replace(/\:/g, '')
+        .replace(/\,/g, '')) + _secretkey)).toLocaleLowerCase();
+      var finalParams = Object.assign({}, beforeSign, {
+        _sign: sign
+      });
+      return finalParams;
     },
-    async getStoreList() {
-      const url = 'http://open.ecp100.com/router/ecp.crm.store.getlist';
-      const res = await this.$http.post(url, this.getParams(params, getlist, true));
-      const data = res.data;
-      console.log(data);
-      // this.$http.post('ecp.crm.store.getlist', getParams(params, getlist, false))
-      //   .then((res) => {
-      //     console.log(res);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   })
+    getStoreList() {
+      axios.post('/', this.getParams(this.params, this.functionname, false))
+        .then((res) => {
+          console.log(res);
+          this.storelist = res.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      // const newParams = await this.getParams(this.params, this._functionname, false);
+      // const ret = axios.post('/', newParams);
+      // const ret = await axios.post('/', this.getParams(this.params, this.$refs._functionname, true));
 
-      // const ret = this.$http.post('ecp.crm.store.getlist', getParams({
-      //   pageno: 1,
-      //   pagesize: 2
-      // }, getlist, false));
+      // const ret = axios.post('/', this.getParams(this.params, this.functionname)).then((response) => {
+      //   console.log(response)
+      // })
 
       // console.log(ret);
+      // .then((res) =>
+      //   // const ret = res.data;
+      //   console.log(res);
+      //   console.log(ret);
+      // })
+
+
+      // this.$http.post('/', this.getParams(this.params, this._functionname, false))
+      //   .then((res) => {
+      //     console.log(res);
+      //   });
     },
-    sortDefault() {
-      // console.log("默认排序");
-    },
-    sortDistance() {
-      // console.log("距离排序");
-    },
-    sortPrice() {
-      // console.log("价格排序");
-    },
-    sortFilter() {
-      // console.log("条件筛选");
-    }
+    async sortDefault() {},
+    async sortDistance() {},
+    async sortPrice() {},
+    async sortFilter() {}
   }
 };
