@@ -174,11 +174,11 @@
   </div> -->
   <!-- 商铺列表改写 -->
   <ul class="store" :data="storeList" v-model="getStoreList">
-    <li class="storeList">
+    <li class="storeList" v-for="data in storeList.data">
       <a href="#">
         <div class="storeTitle">
           <div class="storeName">
-            <span>La Môd 资生堂美容美发概念店·大中华店</span>
+            <span>{{ data.store_name }}</span>
           </div>
           <div class="storeDistance fr">
             <svg class="icon" aria-hidden="true">
@@ -191,14 +191,14 @@
           <div class="lImg"><img src="@/assets/img/demo.jpg" /></div>
           <div class="rImg"><img src="@/assets/img/img.png" /></div>
         </div>
-        <div class="shopInfo">
-          <span>全球首家资生堂美容美发概念店，国内独家使用资生堂QI系列!</span>
+        <div class="storeInfo">
+          <span>{{ data.attribute2 }}</span>
         </div>
         <div class="storeAddress">
           <svg class="icon bigger" aria-hidden="true">
             <use xlink:href="#icon-dingwei"></use>
           </svg>
-          上海市黄浦区马当路159号，13号线2号口直走200米
+          {{data.province + data.city + data.district + data.address}}
         </div>
 
         <div class="consumption">
@@ -206,62 +206,17 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-pinglun"></use>
             </svg>
-            点评数1266
+            点评数 {{data.storezxcount}}
           </div>
           <div class="perConsump">
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-meiyuan8"></use>
             </svg>
-            人均消费488
+            人均消费{{data.avgprice}}
           </div>
         </div>
       </a>
       <a href="#" class="serviceOnsale tac" style="color:#FF4081;">查看在售服务</a>
-    </li>
-
-    <li class="storeList">
-      <a href="#">
-        <div class="storeTitle">
-          <div class="storeName">
-            <span>La Môd 资生堂美容美发概念店·大中华店</span>
-          </div>
-          <div class="storeDistance fr">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-dingwei1"></use>
-            </svg>
-            200m
-          </div>
-        </div>
-        <div class="storeIMG">
-          <div class="lImg"><img src="@/assets/img/demo.jpg" /></div>
-          <div class="rImg"><img src="@/assets/img/img.png" /></div>
-        </div>
-        <div class="shopInfo">
-          <span>全球首家资生堂美容美发概念店，国内独家使用资生堂QI系列!</span>
-        </div>
-        <div class="storeAddress">
-          <svg class="icon bigger" aria-hidden="true">
-            <use xlink:href="#icon-dingwei"></use>
-          </svg>
-          上海市黄浦区马当路159号，13号线2号口直走200米
-        </div>
-
-        <div class="consumption">
-          <div class="comment">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-pinglun"></use>
-            </svg>
-            点评数1266
-          </div>
-          <div class="perConsump">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-meiyuan8"></use>
-            </svg>
-            人均消费488
-          </div>
-        </div>
-      </a>
-      <a href="#" class="serviceOnsale tac" style="color: tomato;">查看在售服务</a>
     </li>
   </ul>
   <!-- 导入自定义全局组件：底部导航 -->

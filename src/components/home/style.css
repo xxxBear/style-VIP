@@ -260,7 +260,7 @@ ul li {
 }
 
 .storeList .storeInfo {
-  padding-left: .3125rem;
+  padding: .625rem .3125rem;
 }
 
 .storeList .storeAddress {

@@ -13,7 +13,7 @@ import './assets/iconfont/iconfont.js';
 
 // 引入公共组件
 import FooterNav from '@/components/common/footer';
-import BacktoTop from '@/components/common/backToTop';
+import BacktoTop from '@/components/common/goTop';
 
 Vue.use(MuseUI);
 // 注册全局公共组件

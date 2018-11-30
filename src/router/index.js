@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
-import ShopDetails from '@/components/shopdetails'
+import Store from '@/components/Store'
 import Gallery from '@/components/gallery'
 import Activity from '@/components/activity'
 import Mall from '@/components/mall'
@@ -18,9 +18,9 @@ const router = new Router({
     name: 'home',
     component: Home,
   }, {
-    path: '/shopdetails',
-    name: 'shopdetails',
-    component: ShopDetails
+    path: '/store',
+    name: 'store',
+    component: Store
   }, {
     path: '/gallery',
     name: 'gallery',
