@@ -3,7 +3,9 @@ import axios from 'axios';
 export default {
   data() {
     return {
+      openSearch: false,
       storeList: [],
+      // searchWrapper,
       params: {
         pageno: 1,
         pagesize: 2
@@ -60,6 +62,23 @@ export default {
           // console.log(this.storeList);
         })
     },
+    // 获取位置信息
+    getLocation() {
+      console.log('获取位置信息');
+    },
+    // 搜索功能模块
+    openSearchDialog() {
+      this.openSearch = true;
+      this.$refs.searchWrapper.style.display = 'block';
+      // 这里需要调出系统键盘（未完成）
+      console.log('搜索功能触发');
+    },
+    closeSearchDialog() {
+      this.openSearch = false;
+      this.$refs.searchWrapper.style.display = 'none';
+      console.log('关闭搜索窗口');
+    },
+    // 排序筛选
     async sortDefault() {},
     async sortDistance() {},
     async sortPrice() {},

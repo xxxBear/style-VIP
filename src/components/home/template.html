@@ -1,43 +1,63 @@
 <div class="container">
   <!-- 头部 -->
   <div class="header">
-    <div class="location">
+    <div class="location" @click="getLocation">
       <svg class="icon bigger" aria-hidden="true">
         <use xlink:href="#icon-dingwei"></use>
       </svg>
       <span>上海</span>
     </div>
     <div class="title"><a href="">Style VIP</a></div>
-    <div class="searchBtn">
+
+    <!-- 搜索功能 -->
+    <div class="searchBtn" @click="openSearchDialog">
       <svg class="icon bigger" aria-hidden="true">
         <use xlink:href="#icon-ziyuan"></use>
       </svg>
     </div>
+
+    <!-- <mu-dialog class="searchDialog" :open.sync="openSearch" max-width="100%" scrollable="true">
+      <mu-form :model="searchForm" :label-position="top" label-width="100">
+        <mu-form-item>
+          <input type="search" placeholder="输入沙龙名称进行搜索" style="outline: none;border: .0625rem solid #ccc; border-radius: .1875rem; height: 2.5rem; text-indent: .8rem">
+          <mu-button type="submit" color="primary" style="height: 2.5rem;">搜索</mu-button>
+        </mu-form-item>
+        <mu-form-item style="margin-top: 3.125rem;margin-bottom: 0; padding-bottom: 0">
+          <mu-button @click="closeSearchDialog" style="box-shadow: none; margin: 0 auto">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-guanbi"></use>
+            </svg>
+            关闭</mu-button>
+        </mu-form-item>
+      </mu-form>
+    </mu-dialog> -->
+
+
   </div>
   <!-- 筛选功能 -->
   <div class="sort">
     <div class="default" @click="sortDefault">
       默认
       <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-open"></use>
+        <use xlink:href="#icon-ICON-"></use>
       </svg>
     </div>
     <div class="distance" @click="sortDistance">
       距离
       <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-open"></use>
+        <use xlink:href="#icon-ICON-"></use>
       </svg>
     </div>
     <div class="price" @click="sortPrice">
       价格
       <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-open"></use>
+        <use xlink:href="#icon-ICON-"></use>
       </svg>
     </div>
     <div class="filter" @click="sortFilter">
       筛选
       <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-open"></use>
+        <use xlink:href="#icon-ICON-"></use>
       </svg>
     </div>
   </div>
@@ -219,6 +239,37 @@
       <a href="#" class="serviceOnsale tac" style="color:#FF4081;">查看在售服务</a>
     </li>
   </ul>
+
+  <!-- 点击搜索弹出模块 -->
+  <div ref="searchWrapper" class="searchWrapper" :open.sync="openSearch" style="display:none;width:100%;height:100%;position: fixed;top: 0;left: 0;background: rgba(0,0,0,.4);z-index: 1000;">
+    <div class="searchForm">
+      <form action="" method="post">
+        <mu-row gutter>
+          <mu-col span="9">
+            <div class="grid-cell">
+              <input type="search" placeholder="输入沙龙名称进行搜索" style="border:1px solid #ccc;outline:none;border-radius: 3px">
+            </div>
+          </mu-col>
+          <mu-col span="3">
+            <div class="grid-cell">
+              <button type="submit">搜索</button>
+            </div>
+          </mu-col>
+        </mu-row>
+      </form>
+      <button @click="closeSearchDialog" id="closeBtn">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-guanbi"></use>
+        </svg> 关闭</button>
+    </div>
+  </div>
+  <!-- 点击筛选弹出模块 -->
+  <div ref="filterWrapper" class="filterWrapper" style="width: 100%;">
+    <div class="filter">
+
+    </div>
+  </div>
+
   <!-- 导入自定义全局组件：底部导航 -->
   <footernav></footernav>
   <!-- 返回顶部组件 -->

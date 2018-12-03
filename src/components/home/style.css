@@ -78,6 +78,7 @@ ul li {
   flex: 2;
 }
 
+
 .header .bigger {
   font-size: 1.38rem;
 }
@@ -302,4 +303,36 @@ ul li {
 
 .serviceOnsale {
   color: #FF4081;
+}
+
+.container .searchWrapper .searchForm {
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem 1rem 0;
+}
+
+.searchForm input,
+.searchForm button {
+  width: 100%;
+  display: inline-block;
+  height: 2.5rem;
+  border-radius: .3125rem;
+}
+
+.searchForm input {
+  text-indent: .8rem;
+}
+
+.searchForm button {
+  background-color: #638ADB;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+#closeBtn {
+  display: block;
+  background-color: #fff;
+  color: #000;
+  margin: 6.25rem auto 0;
 }
