@@ -1,60 +1,69 @@
 <template>
   <div class="footerNav">
     <div class="salon">
-      <svg
-        class="icon"
-        aria-hidden="true"
-      >
-        <use xlink:href="#icon-licaijingxuan"></use>
-      </svg>
-      <p>精选沙龙</p>
+      <router-link to="/">
+        <svg
+          class="icon"
+          aria-hidden="true"
+        >
+          <use xlink:href="#icon-licaijingxuan"></use>
+        </svg>
+        <p>理财精选</p>
+      </router-link>
     </div>
-    <div class="works">
-      <svg
-        class="icon"
-        aria-hidden="true"
-      >
-        <use xlink:href="#icon-tupian"></use>
-      </svg>
-      <p>潮流作品</p>
+    <div class="gallery">
+      <router-link to="/gallery">
+        <svg
+          class="icon"
+          aria-hidden="true"
+        >
+          <use xlink:href="#icon-tupian"></use>
+        </svg>
+        <p>潮流作品</p>
+      </router-link>
     </div>
     <div class="activity">
-      <svg
-        class="icon"
-        aria-hidden="true"
-      >
-        <use xlink:href="#icon-shoucang"></use>
-      </svg>
-      <p>活动专区</p>
+      <router-link to="/activity">
+        <svg
+          class="icon"
+          aria-hidden="true"
+        >
+          <use xlink:href="#icon-shoucang"></use>
+        </svg>
+        <p>活动专区</p>
+      </router-link>
     </div>
     <div class="mall">
-      <svg
-        class="icon"
-        aria-hidden="true"
-      >
-        <use xlink:href="#icon-icon-test"></use>
-      </svg>
-      <p>VIP商城</p>
+      <router-link to="/mall">
+        <svg
+          class="icon"
+          aria-hidden="true"
+        >
+          <use xlink:href="#icon-icon-test"></use>
+        </svg>
+        <p>VIP商城</p>
+      </router-link>
     </div>
-    <div class="mine">
-      <svg
-        class="icon"
-        aria-hidden="true"
-      >
-        <use xlink:href="#icon-wode-F"></use>
-      </svg>
-      <p>我的</p>
+    <div class="procenter">
+      <router-link to="/procenter">
+        <svg
+          class="icon"
+          aria-hidden="true"
+        >
+          <use xlink:href="#icon-wode-F"></use>
+        </svg>
+        <p>我的</p>
+      </router-link>
     </div>
   </div>
 </template>
 <script>
 export default {
+  name: "Footernav",
   data() {
     return {};
   },
-  methods: {
-    
-  }
+  methods: {}
 };
 </script>
 <style>
@@ -77,15 +86,17 @@ export default {
   flex: 1;
 }
 
-.footerNav div.active {
+.footerNav div:active {
   color: #ff4081;
 }
 
 .footerNav div .icon {
+  color: #000;
   font-size: 1.46rem;
 }
 
 .footerNav div p {
+  color: #000;
   padding: 0;
   margin: 5px 0;
   font-size: 0.63rem;

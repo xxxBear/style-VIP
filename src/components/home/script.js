@@ -3,9 +3,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      openSearch: false,
       storeList: [],
-      // searchWrapper,
       params: {
         pageno: 1,
         pagesize: 2
@@ -37,12 +35,12 @@ export default {
         for (var i in obj) {
           arr[num] = i;
           num++;
-        }
+        };
         var sortArr = arr.sort();
         var sortObj = {};
         for (var i in sortArr) {
           sortObj[sortArr[i]] = obj[sortArr[i]];
-        }
+        };
         return sortObj;
       };
 
@@ -57,10 +55,12 @@ export default {
     getStoreList() {
       axios.post('/', this.getParams(this.params, this.functionname, false))
         .then((res) => {
-          // console.log(res);
+          // 获取到的门店总数
+          console.log(JSON.parse(res.data.msg).total_results);
+
           this.storeList = JSON.parse(res.data.msg);
           // console.log(this.storeList);
-        })
+        });
     },
     // 获取位置信息
     getLocation() {

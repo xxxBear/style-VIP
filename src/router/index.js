@@ -10,11 +10,9 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
+  // base: '/dist/',
   routes: [{
     path: '/',
-    redirect: '/home'
-  }, {
-    path: '/home',
     name: 'home',
     component: Home,
   }, {

@@ -1,16 +1,67 @@
 <template>
-  <div class="goTop">
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-4fanhuidingbubai"></use>
-    </svg>
+  <div id="goTop">
+    <div
+      class="goTop"
+      @click="goTop"
+      v-show="goTopShow"
+    >
+      <svg
+        class="icon"
+        aria-hidden="true"
+      >
+        <use xlink:href="#icon-4fanhuidingbubai"></use>
+      </svg>
+    </div>
   </div>
+
 </template>
 <script>
 export default {
   data() {
-    return {};
+
+    
+    return {
+      scrollTop: "",
+      goTopShow: false
+    };
   },
-  methods: {}
+  methods: {
+    hanldeScroll() {
+      this.scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      if (this.scrollTop > 500) {
+        this.goTopShow = true;
+      } else {
+        this.goTopShow = false;
+      }
+    },
+    goTop() {
+      let timer = null;
+      let _that = this;
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        if (_that.scrollTop > 0) {
+          _that.scrollTop -= 50;
+          document.body.scrollTop = document.documentElement.scrollTop =
+            _that.scrollTop;
+          timer = requestAnimationFrame(fn);
+          _that.goTopShow = false;
+        } else {
+          cancelAnimationFrame(timer);
+          _that.goTopShow = false;
+        }
+      });
+      // console.log("返回顶部");
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.hanldeScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.hanldeScroll);
+  }
 };
 </script>
 <style>
